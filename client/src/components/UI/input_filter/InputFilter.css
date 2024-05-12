@@ -1,0 +1,41 @@
+.col {
+    width: 450px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.col svg {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-filter {
+    border: none;
+    color: #8D8F93;
+    font-size: 14px;
+    width: 100%;
+    padding: 12px;
+
+    padding-left: 30px;
+
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    outline: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) center bottom/0 1px no-repeat,
+        linear-gradient(90deg, #3C3E42, #3C3E42) left bottom/100% 1px no-repeat;
+    transition: background-size 0.3s ease;
+}
+
+.input-filter:focus {
+    background-size: 100% 1px, 100% 1px;
+}
+
+.input-filter::placeholder {
+    color: #8D8F93;
+    font-size: 14px;
+}

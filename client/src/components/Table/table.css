@@ -1,0 +1,220 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 5px 0 30px -20px rgba(60, 62, 66, 1);
+    border: 1px solid #3C3E42;
+}
+
+.table-container__top {
+    /* align-self: flex-start; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.table-container__top .add-asset {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-right: 5px;
+}
+
+.add-asset svg {
+    margin-right: 1px;
+}
+
+.right-block {
+    display: none;
+    align-items: center;
+}
+
+.right-block .extra-block {
+    border: 1px solid #3C3E42;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.extra-block__el {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.extra-block__el text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra-block__el .text svg {
+    margin-right: 5px;
+}
+
+.extra-block__el div {
+    margin-top: 5px;
+}
+
+.right-block a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #3C3E42;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(60, 62, 66, 0.6); /* #3366CC; */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+    height: 40px;
+    margin-right: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.right-block a:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(60, 62, 66, 1); /* #2b54a7; */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table-container .column-data {
+    max-width: 100px;
+    min-width: 100px;
+}
+
+.td-data-name {
+    display: flex;
+    align-items: center;
+}
+
+.td-data-name img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 7px;
+    border-radius: 50%;
+}
+
+.td-data-name a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.td-data-name a:hover {
+    color: rgb(183, 183, 183);
+}
+
+.page-container {
+    align-self: center;
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    /* box-shadow: 5px 0 30px -10px rgba(60, 62, 66, 1); */
+    /* border: 1px solid #3C3E42; */
+    /* background: linear-gradient(to top right, #181919, transparent); */
+    /* width: 100%; */
+}
+
+table th {
+    border-bottom: 1px solid #3C3E42;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding: 0.8em 1em;
+    text-align: left;
+    /* border: red 1px solid; */
+}
+
+.sort-container {
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+th:hover .sort-container {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+table td {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0.65em 1em;
+    text-align: left;
+    /* border: 1px solid red; */
+    max-width: 250px;
+    height: 40px;
+}
+
+.td-data-name__content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    min-width: 150px;
+}
+
+.td-data__content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    min-width: 100px;
+}
+
+.td-data-graph__content {
+    max-width: 60px;
+    min-width: 60px;
+}
+
+tr {
+    transition: background 0.25s ease;
+    border-bottom: 1px solid #3C3E42;
+}
+
+tr:hover {
+    background: #101010;
+}
+
+/* tr:nth-child(even) {
+    background-color: #191919;
+} */
+
+.graph-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #747ef4; */
+    width: 100%;
+}
+
+a .graph-icon {
+    /* background-color: #f78181; */
+}
+
+.column-data {
+}
+
+.column-data-graph {
+    width: 40px;
+}
+
+.column-data-name {
+    width: 200px;
+}
+
+.graph-icon svg {
+    /* margin-right: 20px; */
+}

@@ -1,0 +1,91 @@
+.stats {
+    /* background-color: #fc7777; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.stats-main {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 250px);
+    height: 100%;
+    transition: width 0.3s ease;
+    /*  background-color: #8e8e8e; */
+    margin-bottom: 5px;
+}
+
+.sidebar.close~.stats-main {
+    width: calc(100% - 80px);
+    transition: width 0.3s ease,
+}
+
+.stats-main .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.stats-main .title span {
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title .chart-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    height: 100%;
+    padding-top: 5px;
+}
+
+.title .chart-controls button {
+    cursor: pointer;
+    height: 100%;
+    width: 40px;
+    margin-right: 5px;
+    border-radius: 10px;
+    background-color: #121212;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #3C3E42;
+    box-shadow: 5px 0 30px -15px rgba(60, 62, 66, 1);
+}
+
+.title .chart-controls button:hover {
+    background-color: #1d1d20;
+    transition: background-color 0.3s ease;
+}
+
+.chart-controls .tooltip {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+}
+
+.chart-controls .tooltip:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    background-color: #191919;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #3C3E42;
+    box-shadow: 0 2px 0 rgba(38, 38, 38, 0.5);
+    right: 100%;
+}
+
+.stats-main .chart-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 100%;
+    margin-left: 20px;
+}

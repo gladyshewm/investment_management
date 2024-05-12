@@ -1,0 +1,8 @@
+.main.currencies .table-container table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.main.currencies .table-container .col {
+    margin-top: 0;
+}

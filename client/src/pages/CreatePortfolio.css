@@ -1,0 +1,46 @@
+.create-portfolio {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-main {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 250px);
+    height: 100vh;
+    transition: width 0.3s ease;
+}
+
+.sidebar.close~.create-main {
+    width: calc(100% - 80px);
+    transition: width 0.3s ease;
+}
+
+.create-block {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3C3E42;
+    box-shadow: 5px 0 30px -10px rgba(60, 62, 66, 1);
+    background-color: #121212;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.create-block__header {
+    border-bottom: 1px solid #3C3E42;
+    padding: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.create-block input {
+    padding-left: 10px;
+}
+
+.create-block .form-footer {
+    margin-top: 20px;
+}

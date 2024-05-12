@@ -1,0 +1,15 @@
+.main.bonds .table-container__top {
+    /* width: 1005px; */
+}
+
+.main.bonds .table-container table {
+    width: 100%;
+}
+
+.main.bonds .table-container .column-sector {
+    width: 150px;
+}
+
+.main.bonds .table-container .col {
+    margin-top: 0;
+}

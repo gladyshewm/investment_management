@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "@tinkoff/invest-openapi-js-sdk": "^1.5.0",
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "grpc-tools": "^1.12.4",
+    "nodemon": "^3.0.3",
+    "openai": "^4.28.0",
+    "protobufjs": "^7.2.6",
+    "uri-js": "^4.2.2",
+    "xirr": "^1.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

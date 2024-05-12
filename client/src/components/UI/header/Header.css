@@ -1,0 +1,135 @@
+* {
+    font-family: sans-serif
+}
+
+.header {
+    height: 70px;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F2125;
+    border-bottom: 1px solid #868686;
+    border-top: 1px solid #868686;
+}
+
+.header__btns {
+    display: flex;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__list>li {
+    list-style-type: none;
+}
+
+.header__list>li>a {
+    background-color: #1F2125;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+
+/* 
+SKEW
+
+.header__list>li {
+    list-style-type: none;
+}
+
+.header__list>li:first-child a {
+    background-color: #1F2125;
+    border-radius: 8px 0 0 8px;
+}
+
+.header__list>li:last-child a {
+    background-color: #1F2125;
+    border-radius: 0 8px 8px 0;
+}
+
+.header__list>li>a {
+    background-color: #1F2125; 
+    color: #FABD05;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border: 1px solid #FABD05;
+    height: 100%;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border-radius: 0;
+    transform: skew(-30deg);
+    position: relative;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.header__list>li>a:hover,
+.header__list>li>a:focus,
+.header__list>li>a:active {
+    outline: 0;
+    color: #3C3E42;
+    background-color: #FABD05;
+    border-color: #FABD05; 
+    z-index: 1;
+}
+
+.header__list>li>a>* {
+    transform: skew(30deg);
+}
+
+.header__list>li>a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ */
+
+/*
+SCALE
+
+.header__list >li {
+    list-style-type: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+.header__list >li>a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #8D8F93;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.header__list >li>a:hover {
+    transform: scale(1.05);
+} */
+
+
+
+
+/* 
+UNDERLINE
+
+.header__list >li>a:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: #FABD05;
+    transition: 0.2s ease-in-out;
+}
+
+.header__list >li>a:hover:after,
+.header__list >li>a:focus:after {
+    width: 100%;
+} */

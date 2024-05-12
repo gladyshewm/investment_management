@@ -1,0 +1,72 @@
+.portfolio-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #fff; */
+}
+
+.portfolio-block {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    /* background-color: #ccff67; */
+    width: calc(100% - 250px);
+    transition: width 0.3s ease;
+}
+
+.sidebar.close~.portfolio-block {
+    width: calc(100% - 80px);
+    transition: width 0.3s ease;
+}
+
+.portfolio-block__main-wrapper {
+    width: 90%;
+    /* fit-content */
+    /* background-color: #ff0000; */
+}
+
+.portfolio-block__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 5px 0 30px -20px rgba(60, 62, 66, 1);
+    border: 1px solid #3C3E42;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    min-height: 350px;
+}
+
+.portfolio-table {
+    width: 90%;
+}
+
+.portfolio-table table {
+    min-width: 100%;
+}
+
+.portfolio-table .table-container {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+.portfolio-main .right-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase {
+    color: #00B60F; /* #109618 */
+}
+
+.sale {
+    color: #EF1211; /* #DC3912 */
+}
+
+.asset-cell__ticker {
+    color: rgba(143, 143, 143, 0.8);
+}
