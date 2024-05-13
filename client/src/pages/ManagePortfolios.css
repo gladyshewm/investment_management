@@ -8,7 +8,6 @@
     align-self: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: calc(100% - 250px);
     transition: width 0.3s ease;
 }
@@ -16,6 +15,14 @@
 .sidebar.close~.manage-block {
     width: calc(100% - 80px);
     transition: width 0.3s ease;
+}
+
+.manage-block__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-color: #ff5c5c; */
 }
 
 .manage-block__main {
@@ -27,15 +34,14 @@
     box-shadow: 5px 0 30px -20px rgba(60, 62, 66, 1);
     border: 1px solid #3C3E42;
     margin-bottom: 20px;
-    width: 90%;
-    min-height: 350px;
+    width: 100%;
 }
 
 .manage-block__header {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     color: rgba(255, 255, 255, 0.8);
     height: 80px;
     margin-bottom: 10px;

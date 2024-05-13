@@ -18,8 +18,8 @@ body {
 
 .main {
     align-self: flex-end;
-    width: calc(100% - 390px);
-    margin-right: 70px;
+    width: calc(100% - 290px);
+    margin-right: 20px;
     margin-top: 30px;
     margin-bottom: 30px;
     transition: width 0.3s ease;
@@ -31,7 +31,7 @@ body {
 }
 
 .sidebar.close ~ .main {
-    width: calc(100% - 220px);
+    width: calc(100% - 120px);
     transition: width 0.3s ease,
 }
 

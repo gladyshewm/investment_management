@@ -1,9 +1,11 @@
 import React, { useMemo, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "../components/UI/sidebar/Sidebar";
 import { COLUMNS } from "../components/Table/assets_columns";
 import Table from "../components/Table/Table";
 import user from "../api/user";
 import Loading from "../components/Loading/Loading";
+import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
 import "./Assets.css";
 
 const Assets = () => {
@@ -43,9 +45,18 @@ const Assets = () => {
                 <div className="portfolio-block">
                     <div className="portfolio-block__main-wrapper">
                         <div className="portfolio-block__main">
-                            <div className="portfolio-table">
-                                <Table columns={columns} data={portfolioShares} extraBlock={totalCosts}/>
-                            </div>
+                            {portfolioShares.length > 0 ?
+                                <div className="portfolio-table">
+                                    <Table columns={columns} data={portfolioShares} extraBlock={totalCosts} />
+                                </div> :
+                                <div className="table-not-found">
+                                    <div className="table-not-found__title">Операций не найдено</div>
+                                    <Link to={"/portfolio/add-asset"}>
+                                        <span>Добавить сделки</span>
+                                        <ArrowLeftIcon2 />
+                                    </Link>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

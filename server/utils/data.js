@@ -63,12 +63,20 @@ const trading_statuses = {
     16: 'Недоступна торговля в режиме внутренней ликвидности брокера',
 }
 
+const bonds_risk_level = {
+    0: 'Не определён',
+    1: 'Низкий',
+    2: 'Средний',
+    3: 'Высокий',
+};
+
 const data = {
     real_exchanges,
     shares_sectors,
     bonds_sectors,
     bond_issue_kinds,
-    trading_statuses
+    trading_statuses,
+    bonds_risk_level
 };
 
 export default data;

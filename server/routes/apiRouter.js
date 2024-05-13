@@ -1,5 +1,6 @@
 import { Router } from "express";
 import supabase from "../supabase/supabase.js";
+import data from "../utils/data.js";
 import xirr from 'xirr';
 
 export const apiRouter = Router();
@@ -231,29 +232,6 @@ apiRouter.get('/year-candles/:figi', async (req, res) => {
     res.send(shareCandle);
 });
 
-apiRouter.get('/shares', async (req, res) => {
-    const { data: shares, error } = await supabase
-        .from('shares')
-        .select('*')
-        .limit(1000);
-
-    if (error) {
-        console.error('Error fetching shares:', error.message);
-        res.status(500).send('Failed to fetch shares');
-    }
-
-    const figiList = shares.map(share => share.figi).join(',');
-
-    const pricesData = await fetchPricesInChunks(figiList);
-
-    const sharesWithPrices = shares.map(share => ({
-        ...share,
-        price: pricesData[share.figi].price
-    }));
-
-    res.send(sharesWithPrices);
-});
-
 //Стоимость портфеля по его id
 apiRouter.get('/portfolio-cost/:portfolioId', async (req, res) => {
     const portfolioId = req.params.portfolioId;
@@ -359,14 +337,49 @@ apiRouter.get('/portfolio-cost/:portfolioId', async (req, res) => {
     }
 });
 
+apiRouter.get('/shares', async (req, res) => {
+    const { data: shares, error } = await supabase
+        .from('shares')
+        .select('*')
+        .limit(1000);
+
+    if (error) {
+        console.error('Error fetching shares:', error.message);
+        res.status(500).send('Failed to fetch shares');
+    }
+
+    shares.forEach(share => {
+        share.sector = data.shares_sectors[share.sector];
+        share.real_exchange = data.real_exchanges[share.real_exchange];
+        share.trading_status = data.trading_statuses[share.trading_status];
+    })
+
+    const figiList = shares.map(share => share.figi).join(',');
+
+    const pricesData = await fetchPricesInChunks(figiList);
+
+    const sharesWithPrices = shares.map(share => ({
+        ...share,
+        price: pricesData[share.figi].price
+    }));
+
+    res.send(sharesWithPrices);
+});
+
 apiRouter.get('/share/:figi', async (req, res) => {
     const figi = req.params.figi;
-    const { data: bond, error } = await supabase
+    const { data: shares, error } = await supabase
         .from('shares')
         .select('*')
         .eq('figi', figi);
 
-    res.send(bond);
+    shares.forEach(share => {
+        share.sector = data.shares_sectors[share.sector];
+        share.real_exchange = data.real_exchanges[share.real_exchange];
+        share.trading_status = data.trading_statuses[share.trading_status];
+    })
+
+    res.send(shares);
 });
 
 apiRouter.get('/bonds', async (req, res) => {
@@ -382,6 +395,10 @@ apiRouter.get('/bonds', async (req, res) => {
     bonds.forEach(bond => {
         const date = new Date(bond.maturity_date).toLocaleDateString();
         bond.maturity_date = date;
+        bond.risk_level = data.bonds_risk_level[bond.risk_level];
+        bond.sector = data.bonds_sectors[bond.sector];
+        bond.issue_kind = data.bond_issue_kinds[bond.issue_kind];
+        bond.real_exchange = data.real_exchanges[bond.real_exchange];
     })
 
     res.send(bonds);
@@ -389,12 +406,19 @@ apiRouter.get('/bonds', async (req, res) => {
 
 apiRouter.get('/bond/:figi', async (req, res) => {
     const figi = req.params.figi;
-    const { data: bond, error } = await supabase
+    const { data: bonds, error } = await supabase
         .from('bonds')
         .select('*')
         .eq('figi', figi);
 
-    res.send(bond);
+    bonds.forEach(bond => {
+        bond.risk_level = data.bonds_risk_level[bond.risk_level];
+        bond.sector = data.bonds_sectors[bond.sector];
+        bond.issue_kind = data.bond_issue_kinds[bond.issue_kind];
+        bond.real_exchange = data.real_exchanges[bond.real_exchange];
+    })
+
+    res.send(bonds);
 });
 
 apiRouter.get('/currencies', async (req, res) => {

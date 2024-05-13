@@ -21,11 +21,13 @@
 .create-block {
     display: flex;
     flex-direction: column;
+    
     border: 1px solid #3C3E42;
-    box-shadow: 5px 0 30px -10px rgba(60, 62, 66, 1);
+    box-shadow: 5px 0 30px -20px rgba(60, 62, 66, 1);
     background-color: #121212;
     border-radius: 10px;
-    width: 500px;
+    width: 700px;
+    height: 500px;
 }
 
 .create-block__header {
@@ -37,10 +39,28 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+.create-block form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.create-form-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.create-block .form-group {
+    margin-bottom: 30px;
+}
+
 .create-block input {
     padding-left: 10px;
 }
 
-.create-block .form-footer {
-    margin-top: 20px;
+.create-block .form-footer button {
+    margin-bottom: 20px;
 }

@@ -37,7 +37,7 @@ const CreatePortfolio = () => {
                         Новый портфель
                     </div>
                     <form id="assetform">
-                        <div className="form-fields">
+                        <div className="create-form-fields">
                             <div className="form-group">
                                 <label htmlFor="asset-name">Название портфеля</label>
                                 <input

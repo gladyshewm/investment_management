@@ -37,9 +37,6 @@ const Bonds = () => {
                 const isDataRecent = (currentTime - storedDataTimestamp) < (60 * 60 * 1000);
                 if (isDataRecent) {
                     setBondsData(JSON.parse(storedData));
-                    /* setTimeout(() => {
-                        setIsLoading(false);
-                    }, 1000); */
                     setIsLoading(false);
                     return;
                 }

@@ -1,6 +1,5 @@
 import GraphIcon from "../UI/icons/GraphIcon";
 import { Link } from "react-router-dom";
-import data from "../../utils/data";
 
 export const COLUMNS = [
     {
@@ -38,10 +37,7 @@ export const COLUMNS = [
     },
     {
         Header: 'Сектор',
-        Cell: ({ row }) =>
-            <>
-                {data.shares_sectors[row.original.sector]}
-            </>,
+        accessor: 'sector',
         className: 'column-data'
     },
     {

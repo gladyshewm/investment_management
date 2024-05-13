@@ -1,6 +1,5 @@
 import GraphIcon from "../UI/icons/GraphIcon";
 import { Link } from "react-router-dom";
-import data from "../../utils/data";
 
 export const COLUMNS = [
     {
@@ -41,10 +40,6 @@ export const COLUMNS = [
     {
         Header: 'Сектор',
         accessor: 'sector',
-        Cell: ({ row }) =>
-            <>
-                {data.bonds_sectors[row.original.sector]}
-            </>,
         className: 'column-sector'
     },
     {
@@ -52,6 +47,15 @@ export const COLUMNS = [
         accessor: 'coupon_quantity_per_year',
         className: 'column-date'
     },
+    {
+        Header: 'Уровень риска',
+        accessor: 'risk_level',
+    },
+/*     {
+        Header: 'НКД',
+        accessor: 'aci_value',
+        className: 'column-date'
+    }, */
 ];
 
 /* () => (

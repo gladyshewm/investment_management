@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Portfolio.css";
 import Sidebar from "../components/UI/sidebar/Sidebar";
 import Loading from "../components/Loading/Loading";
@@ -6,6 +7,7 @@ import Table from "../components/Table/Table";
 import { COLUMNS } from "../components/Table/portfolio_columns";
 import user from "../api/user";
 import investData from "../api/investData";
+import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
 
 const Portfolio = () => {
   const columns = useMemo(() => COLUMNS, []);
@@ -79,9 +81,18 @@ const Portfolio = () => {
         <div className="portfolio-block">
           <div className="portfolio-block__main-wrapper">
             <div className="portfolio-block__main">
-              <div className="portf-table">
-                <Table columns={columns} data={tableData} />
-              </div>
+              {tableData.length > 0 ?
+                <div className="portf-table">
+                  <Table columns={columns} data={tableData} />
+                </div> :
+                <div className="table-not-found">
+                  <div className="table-not-found__title">Портфель пуст</div>
+                  <Link to={"/portfolio/add-asset"}>
+                    <span>Заполнить портфель</span>
+                    <ArrowLeftIcon2 />
+                  </Link>
+                </div>
+              }
             </div>
           </div>
         </div>

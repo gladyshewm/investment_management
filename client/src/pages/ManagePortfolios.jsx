@@ -33,23 +33,26 @@ const ManagePortfolios = () => {
             <Sidebar />
             {isLoading ? (<Loading />) : (
                 <div className="manage-block">
-                    <div className="manage-block__header">
-                        <span className="manage-block__title">Управление портфелями</span>
-                        <div className="add-block">
-                            <Link to="/create-portfolio">
-                                <PlusIcon stroke={"currentColor"} />
-                                <span>Добавить портфель</span>
-                            </Link>
+                    <div className="manage-block__wrapper">
+                        <div className="manage-block__header">
+                            <span className="manage-block__title">Управление портфелями</span>
+                            <div className="add-block">
+                                <Link to="/create-portfolio">
+                                    <PlusIcon stroke={"currentColor"} />
+                                    <span>Добавить портфель</span>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="manage-block__main">
+                            <div className="manage-block__content">
+                                <Table
+                                    columns={columns}
+                                    data={portfolios}
+                                />
+                            </div>
                         </div>
                     </div>
-                    <div className="manage-block__main">
-                        <div className="manage-block__content">
-                            <Table
-                                columns={columns}
-                                data={portfolios}
-                            />
-                        </div>
-                    </div>
+
                 </div>
             )}
         </div>

@@ -26,5 +26,6 @@
 /server/.env
 /server/test_functions.js
 /server/package-lock.json
+/server/public
 /tink_test
 /wrapper

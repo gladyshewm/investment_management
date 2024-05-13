@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../components/UI/sidebar/Sidebar";
 import "./BondInfo.css";
 import { formatDate } from "../utils/formatDate";
-import data from "../utils/data";
 import Loading from "../components/Loading/Loading";
 
 const BondInfo = () => {
@@ -36,10 +35,7 @@ const BondInfo = () => {
     }
 
     const bond = bondData[0];
-    const sector = data.bonds_sectors[bond.sector];
-    const issue_kind = data.bond_issue_kinds[bond.issue_kind];
     const shadowColor = bond.logo_base_color === "#000000" ? "rgba(255, 255, 255, 0.8)" : bond.logo_base_color; 
-    const real_exchange = data.real_exchanges[bond.real_exchange];
 
     return (
         <div className="bond-info" style={{ '--shadow-color': shadowColor }}>
@@ -112,11 +108,11 @@ const BondInfo = () => {
                         </div>
                         <div className="info-item">
                             <div className="info-item__left">Сектор</div>
-                            <div className="info-item__right">{sector}</div>
+                            <div className="info-item__right">{bond.sector}</div>
                         </div>
                         <div className="info-item">
                             <div className="info-item__left">Вид выпуска</div>
-                            <div className="info-item__right">{issue_kind}</div>
+                            <div className="info-item__right">{bond.issue_kind}</div>
                         </div>
                         <div className="info-item">
                             <div className="info-item__left">Размер выпуска</div>
@@ -183,7 +179,7 @@ const BondInfo = () => {
                         <span className="title">Другое</span>
                         <div className="info-item">
                             <div className="info-item__left">Реальная площадка исполнения расчётов</div>
-                            <div className="info-item__right">{real_exchange}</div>
+                            <div className="info-item__right">{bond.real_exchange}</div>
                         </div>
                         <div className="info-item">
                             <div className="info-item__left">Коэф. ставки риска длинной позиции по клиенту</div>
