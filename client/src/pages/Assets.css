@@ -67,20 +67,33 @@
 }
 
 .purchase {
-    color: #00B60F; /* #109618 */
+    color: #00B60F;
+    /* #109618 */
 }
 
 .sale {
-    color: #EF1211; /* #DC3912 */
+    color: #EF1211;
+    /* #DC3912 */
 }
 
 .asset-cell__ticker {
     color: rgba(143, 143, 143, 0.8);
 }
 
+.portfolio-block__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-block__main .not-found__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .portfolio-block__main .table-not-found {
-    margin-top: 300px;
-    /* border: 1px solid red; */
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;

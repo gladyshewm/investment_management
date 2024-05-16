@@ -6,6 +6,7 @@ import Table from "../components/Table/Table";
 import user from "../api/user";
 import Loading from "../components/Loading/Loading";
 import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
+import BriefCaseIcon from "../components/UI/icons/BriefCaseIcon";
 import "./Assets.css";
 
 const Assets = () => {
@@ -14,11 +15,13 @@ const Assets = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [portfolioShares, setPortfolioShares] = useState([]);
     const [totalCosts, setTotalCosts] = useState([]);
+    const [selectedPortfolioId, setSelectedPortfolioId] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const selectedPortfolioId = localStorage.getItem('selectedPortfolioId');
+                setSelectedPortfolioId(selectedPortfolioId);
                 if (selectedPortfolioId) {
                     const portfolioShare = await user.getPortfolioShares(selectedPortfolioId);
                     const portfolioSharesData = portfolioShare.portfolioShares;
@@ -45,17 +48,29 @@ const Assets = () => {
                 <div className="portfolio-block">
                     <div className="portfolio-block__main-wrapper">
                         <div className="portfolio-block__main">
-                            {portfolioShares.length > 0 ?
-                                <div className="portfolio-table">
-                                    <Table columns={columns} data={portfolioShares} extraBlock={totalCosts} />
+                            {!selectedPortfolioId ?
+                                <div className="not-found__wrapper">
+                                    <div className="not-found">
+                                        <span>Портфели отсутствуют</span>
+                                        <Link to="/create-portfolio">
+                                            Создать портфель
+                                            <BriefCaseIcon stroke={"currentColor"} />
+                                        </Link>
+                                    </div>
                                 </div> :
-                                <div className="table-not-found">
-                                    <div className="table-not-found__title">Операций не найдено</div>
-                                    <Link to={"/portfolio/add-asset"}>
-                                        <span>Добавить сделки</span>
-                                        <ArrowLeftIcon2 />
-                                    </Link>
-                                </div>
+                                (
+                                    selectedPortfolioId && portfolioShares.length > 0 ?
+                                        <div className="portfolio-table">
+                                            <Table columns={columns} data={portfolioShares} extraBlock={totalCosts} />
+                                        </div> :
+                                        <div className="table-not-found">
+                                            <div className="table-not-found__title">Операций не найдено</div>
+                                            <Link to={"/portfolio/add-asset"}>
+                                                <span>Добавить сделки</span>
+                                                <ArrowLeftIcon2 />
+                                            </Link>
+                                        </div>
+                                )
                             }
                         </div>
                     </div>

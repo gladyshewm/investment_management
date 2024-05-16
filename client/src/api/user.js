@@ -16,6 +16,7 @@ const getPortfolios = async (user_id) => {
         return portfolios;
     } catch (error) {
         console.error('Error fetching portfolios:', error.message);
+        return [];
     }
 };
 

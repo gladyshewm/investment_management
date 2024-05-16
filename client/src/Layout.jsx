@@ -30,8 +30,8 @@ const Layout = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/auth/reg" element={isAuthenticated ? <Navigate to="/manage-portfolios" /> : <SignUpForm />} />
-                <Route path="/auth" element={isAuthenticated ? <Navigate to="/manage-portfolios" /> : <SignInForm />} />
+                <Route path="/auth/reg" element={isAuthenticated ? <Navigate to="/dashboard" /> : <SignUpForm />} />
+                <Route path="/auth" element={isAuthenticated ? <Navigate to="/dashboard" /> : <SignInForm />} />
                 <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />} >
                     <Route path="shares" element={<Shares />} />
                     <Route path="/share/:figi/info" element={<ShareInfo />} />

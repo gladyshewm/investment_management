@@ -8,17 +8,20 @@ import { COLUMNS } from "../components/Table/portfolio_columns";
 import user from "../api/user";
 import investData from "../api/investData";
 import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
+import BriefCaseIcon from "../components/UI/icons/BriefCaseIcon";
 
 const Portfolio = () => {
   const columns = useMemo(() => COLUMNS, []);
   const [isLoading, setIsLoading] = useState(true);
   const [tableData, setTableData] = useState([]);
+  const [selectedPortfolioId, setSelectedPortfolioId] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const selectedPortfolioId = localStorage.getItem('selectedPortfolioId');
         const storedData = localStorage.getItem('portfolioData');
+        setSelectedPortfolioId(selectedPortfolioId);
         const lastUpdated = localStorage.getItem('portfolioDataLastUpdated');
 
         if (storedData && lastUpdated) {
@@ -81,17 +84,29 @@ const Portfolio = () => {
         <div className="portfolio-block">
           <div className="portfolio-block__main-wrapper">
             <div className="portfolio-block__main">
-              {tableData.length > 0 ?
-                <div className="portf-table">
-                  <Table columns={columns} data={tableData} />
+              {!selectedPortfolioId ?
+                <div className="not-found__wrapper">
+                  <div className="not-found">
+                    <span>Портфели отсутствуют</span>
+                    <Link to="/create-portfolio">
+                      Создать портфель
+                      <BriefCaseIcon stroke={"currentColor"} />
+                    </Link>
+                  </div>
                 </div> :
-                <div className="table-not-found">
-                  <div className="table-not-found__title">Портфель пуст</div>
-                  <Link to={"/portfolio/add-asset"}>
-                    <span>Заполнить портфель</span>
-                    <ArrowLeftIcon2 />
-                  </Link>
-                </div>
+                (
+                  tableData.length > 0 ?
+                    <div className="portf-table">
+                      <Table columns={columns} data={tableData} />
+                    </div> :
+                    <div className="table-not-found">
+                      <div className="table-not-found__title">Портфель пуст</div>
+                      <Link to={"/portfolio/add-asset"}>
+                        <span>Заполнить портфель</span>
+                        <ArrowLeftIcon2 />
+                      </Link>
+                    </div>
+                )
               }
             </div>
           </div>

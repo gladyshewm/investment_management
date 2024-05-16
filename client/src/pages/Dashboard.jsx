@@ -139,12 +139,14 @@ const Dashboard = () => {
             ) : (
                 <div className="dashboard-main">
                     {portfolio.error ? (
-                        <div className="not-found">
-                            <span>Портфели не найдены</span>
-                            <Link to="/create-portfolio">
-                                Создать портфель
-                                <BriefCaseIcon stroke={"currentColor"} />
-                            </Link>
+                        <div className="not-found__wrapper">
+                            <div className="not-found">
+                                <span>Портфели не найдены</span>
+                                <Link to="/create-portfolio">
+                                    Создать портфель
+                                    <BriefCaseIcon stroke={"currentColor"} />
+                                </Link>
+                            </div>
                         </div>
                     ) : (
                         <>
@@ -183,7 +185,11 @@ const Dashboard = () => {
                                                     <BanknotesIcon />
                                                     Стоимость портфеля
                                                 </div>
-                                                <div className="count">{!isDataLoaded ? <Loading /> : (costPorftolio != null && costPorftolio !== undefined) ? costPorftolio + "₽" : ""}</div>
+                                                <div className="count">
+                                                    {!isDataLoaded ?
+                                                        <Loading /> :
+                                                        (costPorftolio != null && costPorftolio !== undefined) ? costPorftolio + "₽" : ""}
+                                                </div>
                                             </div>
                                             <div>
                                                 <div className="title">
@@ -241,7 +247,11 @@ const Dashboard = () => {
                                             </div>
                                             <div className="portfolio-content">
                                                 <div className="chart">
-                                                    {dataForPieChart.length > 1 ? <PieChart data={dataForPieChart} /> : <div className="pie-chart-not-found">Недостаточно данных</div>}
+                                                    {
+                                                        dataForPieChart.length > 1 ?
+                                                            <PieChart data={dataForPieChart} /> :
+                                                            <div className="pie-chart-not-found">Недостаточно данных</div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -249,7 +259,11 @@ const Dashboard = () => {
                                             <div className="revenue-main">
                                                 <span className="title">Будущие дивиденды</span>
                                                 {isDataLoaded ?
-                                                    (dataForBarChart.length > 1 ? <BarChart data={dataForBarChart} /> : <div className="chart-not-found">Не найдено дивидендных выплат</div>) :
+                                                    (
+                                                        dataForBarChart.length > 1 ?
+                                                            <BarChart data={dataForBarChart} /> :
+                                                            <div className="chart-not-found">Не найдено дивидендных выплат</div>
+                                                    ) :
                                                     ""}
                                             </div>
                                         </div>
