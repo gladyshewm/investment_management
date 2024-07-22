@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Portfolio.css";
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import Loading from "../components/Loading/Loading";
-import Table from "../components/Table/Table";
-import { COLUMNS } from "../components/Table/portfolio_columns";
-import user from "../api/user";
-import investData from "../api/investData";
-import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
-import BriefCaseIcon from "../components/UI/icons/BriefCaseIcon";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import Loading from "../../components/Loading/Loading";
+import Table from "../../components/Table/Table";
+import { COLUMNS } from "../../components/Table/portfolio_columns";
+import user from "../../api/user";
+import investData from "../../api/investData";
+import ArrowLeftIcon2 from "../../components/UI/icons/ArrowLeftIcon2";
+import BriefCaseIcon from "../../components/UI/icons/BriefCaseIcon";
 
 const Portfolio = () => {
   const columns = useMemo(() => COLUMNS, []);

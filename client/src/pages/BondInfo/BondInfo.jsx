@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Sidebar from "../components/UI/sidebar/Sidebar";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
 import "./BondInfo.css";
-import { formatDate } from "../utils/formatDate";
-import Loading from "../components/Loading/Loading";
+import { formatDate } from "../../utils/formatDate";
+import Loading from "../../components/Loading/Loading";
 
 const BondInfo = () => {
     const { figi } = useParams();
     const [bondData, setBondData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const callAPIBond = async () => {
-        try {
-            const response = await fetch(`/api/bond/${figi}`);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            return [];
-        }
-    }
     useEffect(() => {
+        const callAPIBond = async () => {
+            try {
+                const response = await fetch(`/api/bond/${figi}`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return [];
+            }
+        }
+
         callAPIBond()
             .then(res => {
                 setBondData(res);
@@ -28,7 +29,7 @@ const BondInfo = () => {
             }
             )
             .catch(err => console.log(err));
-    }, []);
+    }, [figi]);
 
     if (isLoading) {
         return <Loading />;

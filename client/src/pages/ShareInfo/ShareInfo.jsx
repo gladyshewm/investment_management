@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ShareInfo.css";
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import { formatDate } from "../utils/formatDate";
-import Loading from "../components/Loading/Loading";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import { formatDate } from "../../utils/formatDate";
+import Loading from "../../components/Loading/Loading";
 
 const ShareInfo = () => {
     const { figi } = useParams();
     const [shareData, setShareData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const callAPIShare = async () => {
-        try {
-            const response = await fetch(`/api/share/${figi}`);
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            return [];
-        }
-    }
-
     useEffect(() => {
+        const callAPIShare = async () => {
+            try {
+                const response = await fetch(`/api/share/${figi}`);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                return [];
+            }
+        }
+
         callAPIShare()
             .then(res => {
                 setShareData(res);
@@ -29,7 +29,7 @@ const ShareInfo = () => {
             }
             )
             .catch(err => console.log(err));
-    }, []);
+    }, [figi]);
 
     if (isLoading) {
         return <Loading />;

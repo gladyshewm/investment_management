@@ -1,4 +1,4 @@
-var ExcelFormulas = {
+const ExcelFormulas = {
 
     PVIF: function (rate, nper) {
         return Math.pow(1 + rate, nper);
@@ -97,7 +97,7 @@ var ExcelFormulas = {
 
 };
 
-var values =
+const values =
     [
         {Date: "2024-04-01", Flow: -10100},
         {Date: "2024-04-03", Flow: -10100},
@@ -111,5 +111,5 @@ var values =
         {Date: "2024-05-17", Flow: -12099},
         {Date: "2024-05-08", Flow: 20036.07}
     ];
-var irr = ExcelFormulas.XIRR(values);
+const irr = ExcelFormulas.XIRR(values);
 console.log("XIRR:", irr);

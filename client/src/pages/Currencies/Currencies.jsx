@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { COLUMNS } from "../components/Table/currencies_columns";
-import Table from "../components/Table/Table";
-import Sidebar from "../components/UI/sidebar/Sidebar";
+import { COLUMNS } from "../../components/Table/currencies_columns";
+import Table from "../../components/Table/Table";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
 import "./Currencies.css";
-import Loading from "../components/Loading/Loading";
+import Loading from "../../components/Loading/Loading";
 
 const Currencies = () => {
     const columns = useMemo(() => COLUMNS, []);
@@ -30,7 +30,6 @@ const Currencies = () => {
                 const storedDataTimestamp = new Date(lastUpdated).getTime();
                 const currentTime = new Date().getTime();
 
-                // Проверяем, были ли данные обновлены за последний час
                 const isDataRecent = (currentTime - storedDataTimestamp) < (60 * 60 * 1000);
 
                 if (isDataRecent) {

@@ -114,7 +114,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 100%; */ /* 600 400 */
     height: 100%;
     margin-left: 20px;
     margin-right: 20px;
@@ -158,7 +157,6 @@
 }
 
 .dashboard-wrapper {
-    /* border: 1px solid blue; */
     width: 100%;
 }
 
@@ -166,7 +164,6 @@
     display: flex;
     align-self: center;
     justify-content: space-between;
-    /* border: 1px solid red; */
     width: 100%;
 }
 
@@ -181,7 +178,6 @@
     box-shadow: 5px 0 30px -20px rgba(60, 62, 66, 1);
     min-width: 24%;
     max-width: 24%;
-    /* min-width: 200px; */
     min-height: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -251,12 +247,9 @@
 .statss {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid red; */
     background-color: #181818;
     width: 100%;
     min-height: 200px;
-    /* margin: 20px; */
-
 }
 
 .portfolio th.column-header,
@@ -300,7 +293,6 @@
 
 .statss .portfolio,
 .statss .portfolio-content {
-    /* border: 1px solid blue; */
     background-color: #121212;
     margin-left: 20px;
     border-radius: 10px;
@@ -335,7 +327,6 @@
 }
 
 .revenue {
-    /*     border: 1px solid red; */
     margin-top: 20px;
     width: 100%;
     min-height: 100px;
@@ -359,10 +350,6 @@
     font-size: 16px;
     margin-left: 20px;
     margin-top: 20px;
-}
-
-.revenue-main .area-chart {
-    /* border: 1px solid red */
 }
 
 .chart-not-found {

@@ -1,12 +1,12 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import { COLUMNS } from "../components/Table/assets_columns";
-import Table from "../components/Table/Table";
-import user from "../api/user";
-import Loading from "../components/Loading/Loading";
-import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
-import BriefCaseIcon from "../components/UI/icons/BriefCaseIcon";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import { COLUMNS } from "../../components/Table/assets_columns";
+import Table from "../../components/Table/Table";
+import user from "../../api/user";
+import Loading from "../../components/Loading/Loading";
+import ArrowLeftIcon2 from "../../components/UI/icons/ArrowLeftIcon2";
+import BriefCaseIcon from "../../components/UI/icons/BriefCaseIcon";
 import "./Assets.css";
 
 const Assets = () => {

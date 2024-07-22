@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AddAsset.css";
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import ArrowLeftIcon2 from "../components/UI/icons/ArrowLeftIcon2";
-import user from "../api/user";
-import useInput from "../components/hooks/useInput";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import ArrowLeftIcon2 from "../../components/UI/icons/ArrowLeftIcon2";
+import user from "../../api/user";
+import useInput from "../../components/hooks/useInput";
 
 const AddAsset = () => {
     const navigate = useNavigate();

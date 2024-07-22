@@ -1,26 +1,26 @@
 import React, { useContext } from "react";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import PrivateRoute from "./routes/PrivateRoute";
-import Shares from "./pages/Shares";
-import ShareInfo from "./pages/ShareInfo";
-import Stats from "./pages/Stats";
-import Dashboard from "./pages/Dashboard";
-import StockChart from "./pages/StockChart";
+import Shares from "./pages/Shares/Shares";
+import ShareInfo from "./pages/ShareInfo/ShareInfo";
+import Stats from "./pages/Stats/Stats";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import StockChart from "./pages/StockChart/StockChart";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 import SignInForm from "./components/SignInForm/SignInForm";
 import AuthContext from "./context/AuthContext";
-import Currencies from "./pages/Currencies";
-import Bonds from "./pages/Bonds";
-import BondInfo from "./pages/BondInfo";
+import Currencies from "./pages/Currencies/Currencies";
+import Bonds from "./pages/Bonds/Bonds";
+import BondInfo from "./pages/BondInfo/BondInfo";
 import { BondsProvider } from "./context/BondsContext";
-import Assets from "./pages/Assets";
-import CreatePortfolio from "./pages/CreatePortfolio";
-import AddAsset from "./pages/AddAsset";
+import Assets from "./pages/Assets/Assets";
+import CreatePortfolio from "./pages/CreatePortfolio/CreatePortfolio";
+import AddAsset from "./pages/AddAsset/AddAsset";
 import Loading from "./components/Loading/Loading";
-import ManagePortfolios from "./pages/ManagePortfolios";
-import Portfolio from "./pages/Portfolio";
+import ManagePortfolios from "./pages/ManagePortfolios/ManagePortfolios";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
-const Layout = () => {
+const AppRoutes = () => {
     const { isAuthenticated, isLoading } = useContext(AuthContext);
 
     if (isLoading) {
@@ -53,4 +53,4 @@ const Layout = () => {
     )
 };
 
-export default Layout;
+export default AppRoutes;

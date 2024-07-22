@@ -1,10 +1,8 @@
 import React from "react";
-import Stats from "./Stats";
-/* import { useParams } from "react-router-dom"; */
+import Stats from "../Stats/Stats";
 import { useLocation } from 'react-router-dom';
 
 const StockChart = () => {
-    /* const { figi } = useParams(); */
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const figi = searchParams.get('figi');

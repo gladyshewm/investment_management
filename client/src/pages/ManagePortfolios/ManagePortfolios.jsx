@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "./ManagePortfolios.css";
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import Loading from "../components/Loading/Loading";
-import Table from "../components/Table/Table";
-import { COLUMNS } from "../components/Table/portfolio-manage_columns";
-import user from "../api/user";
-import PlusIcon from "../components/UI/icons/PlusIcon";
-import BriefCaseIcon from "../components/UI/icons/BriefCaseIcon";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import Loading from "../../components/Loading/Loading";
+import Table from "../../components/Table/Table";
+import { COLUMNS } from "../../components/Table/portfolio-manage_columns";
+import user from "../../api/user";
+import PlusIcon from "../../components/UI/icons/PlusIcon";
+import BriefCaseIcon from "../../components/UI/icons/BriefCaseIcon";
 
 const ManagePortfolios = () => {
     const columns = useMemo(() => COLUMNS, []);

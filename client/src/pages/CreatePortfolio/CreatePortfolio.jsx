@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CreatePortfolio.css";
-import Sidebar from "../components/UI/sidebar/Sidebar";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
 import { useNavigate } from "react-router-dom";
-import user from "../api/user";
-import useInput from "../components/hooks/useInput";
+import user from "../../api/user";
+import useInput from "../../components/hooks/useInput";
 
 const CreatePortfolio = () => {
     const navigate = useNavigate();
-    /* const [portfolioName, setPortfolioName] = useState(''); */
-    /* const [portfolioGoal, setPortfolioGoal] = useState(''); */
     const portfolioName = useInput('', { isEmpty: true });
     const portfolioGoal = useInput('', { isEmpty: true });
 

@@ -1,11 +1,10 @@
 import React, { useState, useMemo, useEffect } from "react";
-import Table from "../components/Table/Table";
-//import MOCK_DATA from "../components/Table/MOCK_DATA";
-import { COLUMNS } from "../components/Table/bonds_columns";
+import Table from "../../components/Table/Table";
+import { COLUMNS } from "../../components/Table/bonds_columns";
 import "./Bonds.css"
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import { BondsProvider, useBondsData } from "../context/BondsContext";
-import Loading from "../components/Loading/Loading";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import { BondsProvider, useBondsData } from "../../context/BondsContext";
+import Loading from "../../components/Loading/Loading";
 
 const Bonds = () => {
     const columns = useMemo(() => COLUMNS, []);
@@ -14,7 +13,6 @@ const Bonds = () => {
 
     const callAPIBonds = async () => {
         try {
-            console.log("Вызов API");
             const response = await fetch('/api/bonds');
             const data = await response.json();
             return data;

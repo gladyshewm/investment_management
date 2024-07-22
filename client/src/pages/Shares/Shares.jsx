@@ -1,10 +1,9 @@
 import React, { useState, useMemo, useEffect } from "react";
-import Table from "../components/Table/Table";
-//import MOCK_DATA from "../components/Table/MOCK_DATA";
-import { COLUMNS } from "../components/Table/shares_columns";
+import Table from "../../components/Table/Table";
+import { COLUMNS } from "../../components/Table/shares_columns";
 import "./Shares.css"
-import Sidebar from "../components/UI/sidebar/Sidebar";
-import Loading from "../components/Loading/Loading";
+import Sidebar from "../../components/UI/sidebar/Sidebar";
+import Loading from "../../components/Loading/Loading";
 
 const Companies = () => {
     const columns = useMemo(() => COLUMNS, []);
@@ -32,14 +31,10 @@ const Companies = () => {
                 const storedDataTimestamp = new Date(lastUpdated).getTime();
                 const currentTime = new Date().getTime();
 
-                // Проверяем, были ли данные обновлены за последний час
                 const isDataRecent = (currentTime - storedDataTimestamp) < (20 * 60 * 1000);
 
                 if (isDataRecent) {
                     setSharesData(JSON.parse(storedData));
-                    /* setTimeout(() => {
-                        setIsLoading(false);
-                    }, 1000); */
                     setIsLoading(false);
                     return;
                 }
