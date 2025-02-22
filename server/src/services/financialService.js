@@ -1,4 +1,4 @@
-import supabase from '../supabase/supabase.js';
+import supabase from '../supabase-client/supabase-client.js';
 import financialData from '../constants/data.js';
 
 const apiLink = process.env.API_LINK;

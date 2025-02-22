@@ -1,4 +1,4 @@
-import supabase from '../supabase/supabase.js';
+import supabase from '../supabase-client/supabase-client.js';
 
 const getPortfolios = async (userId) => {
   try {

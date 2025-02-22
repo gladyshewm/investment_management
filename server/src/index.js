@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import { config } from 'dotenv';
-import { apiRouter } from './src/routes/financialRouter.js';
-import { authRouter } from './src/routes/authRouter.js';
-import { userDataRouter } from './src/routes/userRouter.js';
+import { apiRouter } from './routes/financialRouter.js';
+import { authRouter } from './routes/authRouter.js';
+import { userDataRouter } from './routes/userRouter.js';
 config();
 
 const app = express();
